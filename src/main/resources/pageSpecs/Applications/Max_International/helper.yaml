@@ -1,0 +1,8 @@
+timeout: 20
+
+expectedTitle: Max_International helper
+
+elements:
+      optionsAtBottom :
+               findBy: xpath
+               locator: //*[@class="overlay-img bg-blue"]//a
