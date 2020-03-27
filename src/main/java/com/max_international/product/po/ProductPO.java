@@ -122,8 +122,10 @@ public class ProductPO extends MobileWebViewPage {
 		System.out.println(dynamicElement.size());
 		if(dynamicElement.size() != 0)
 		{
-			actions.moveToElement(element(subOption));
-			actions.perform();
+			Thread.sleep(2000);
+			System.out.println("INside");
+			actions.moveToElement(element(subOption)).perform();
+			//actions.perform();
 			element(subOption).click();
 			return true;
 		}

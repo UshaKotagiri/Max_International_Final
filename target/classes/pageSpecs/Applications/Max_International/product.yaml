@@ -12,10 +12,10 @@ elements:
             locator: //*[@class="product-cards--list"]
       nutritionalHeadingForLearnMore:
             findBy: xpath
-            locator: //*[@class="text-uppercase" and text()="Nutritionals"]
+            locator: //*[@src="../images/product1.png"]
       nutritionalsScrollLearnMore:
             findBy: xpath
-            locator: //a[@href='/products/nutritionals'][text()="Learn More"]
+            locator: //a[@href='/products/nutritionals' and text()='Learn More']
       imageBesideSwitchHeadingLearnMore:
             findBy: xpath
             locator: //*[@src="../images/img-weight-management.jpg"]

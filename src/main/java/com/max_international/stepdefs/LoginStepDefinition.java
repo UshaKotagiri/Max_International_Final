@@ -6,6 +6,7 @@ package com.max_international.stepdefs;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 
 
@@ -25,8 +26,8 @@ public class LoginStepDefinition extends StepDefinitionInit {
     	}
     	
     }
-    @Then("^Selecting the language as English$")
-	public void selectingTheLanguageAsEnglish() throws Throwable {
+	@When("^Selecting the language as English$")
+    public void selectingTheLanguageAsEnglish() throws Throwable {
 		System.out.println("In lang");
 		
 		if(loginPO.session.driver.getCurrentUrl().contentEquals("http://vo.max.com/home/") == false)
@@ -36,12 +37,12 @@ public class LoginStepDefinition extends StepDefinitionInit {
 		}
 	}
 
-    @And("^Check the presence of the location on the page and select$")
-	public void checkThePresenceOfTheLocationOnThePageAndSelect() throws Throwable {
+	@When("^Selecting the location$")
+    public void selectingTheLocation() throws Throwable {
     	if(loginPO.session.driver.getCurrentUrl().contentEquals("http://vo.max.com/home/") == false)
     	{
 		//loginPO.checkNSelectCountry("Australia");
-    		loginPO.selectLocation("Colombia");
+    		loginPO.selectLocation("United States");
     	}
 	}
 

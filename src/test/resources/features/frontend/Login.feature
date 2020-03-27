@@ -5,8 +5,8 @@ Feature: Max_International sigin Screen
 @demo
 Scenario Outline:: [Login] To verify the user is able to sigin in the application
    	Given I am on the sigin page
-	Then Selecting the language as English
-    And Check the presence of the location on the page and select
+	When Selecting the language as English
+    When Selecting the location
     And Click on member login tab on top right
 	And Clicking on username 
 Examples:

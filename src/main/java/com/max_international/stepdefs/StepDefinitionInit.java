@@ -10,7 +10,9 @@ import org.yaml.snakeyaml.Yaml;
 import com.max_international.Helper.Helper;
 import com.max_international.automation.framework.ConfigurationRegistory;
 import com.max_international.automation.framework.TestSession;
+import com.max_international.beauty.po.BeautyPO;
 import com.max_international.login.po.LoginPO;
+import com.max_international.nutritional.po.NutritionalPO;
 import com.max_international.product.po.ProductPO;
 import com.max_international.utils.PropFileHandler;
 
@@ -26,6 +28,8 @@ public class StepDefinitionInit {
 	static LoginPO loginPO;
 	static ProductPO productPO;
 	static Helper helper;
+	static NutritionalPO nutritionalPO;
+	static BeautyPO beautyPO;
 
 
 	public TestSession getTestSession() throws Exception {
@@ -50,6 +54,8 @@ public class StepDefinitionInit {
 		loginPO = new LoginPO(session);
 		productPO = new ProductPO(session);
 		helper = new Helper(session);
+		nutritionalPO = new NutritionalPO(session);
+		beautyPO = new BeautyPO(session);
 		return session;
 	}
 

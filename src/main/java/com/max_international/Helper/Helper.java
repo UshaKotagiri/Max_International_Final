@@ -2,6 +2,7 @@ package com.max_international.Helper;
 
 import java.util.List;
 
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
@@ -36,6 +37,16 @@ public class Helper extends MobileWebViewPage {
 		
 		return session.driver.getTitle().contains(titleToBeChecked);
 	}
-
+	
+	public void hooverToMainNSubNClick(WebElement mainOption,WebElement subOption){
+		Actions actions = new Actions(session.driver);
+		actions.moveToElement(mainOption);
+		actions.moveToElement(subOption).click().perform();
+	}
+	
+	public void scrollForElementNClick(WebElement locationForScroll){
+		Actions actions = new Actions(session.driver);
+		actions.moveToElement(locationForScroll).click().perform();
+	}
 
 }

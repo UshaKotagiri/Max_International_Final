@@ -16,7 +16,8 @@ import cucumber.api.junit.Cucumber;
 				
 				features = "src/test/resources/features/frontend/",
 
-				 glue = {"com.max_international.stepdefs"}
+				 glue = {"com.max_international.stepdefs"},
+				 tags={"@BF16,@BF18,@BF21,@BF22,@BF24"}
 )  
 				
 public class RunCukeTestFrontend {
