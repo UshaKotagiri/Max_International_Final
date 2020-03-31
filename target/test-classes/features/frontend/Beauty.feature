@@ -220,5 +220,52 @@ Scenario: [Beauty_Concealer_24] To verify user is able to click on the close(x) 
 Scenario: [Beauty_Concealer_25] To verify user is able to click forward/backword slick arrow on concealer page and 
 verify the next page
 	When Clicking on "Concealer"
+	
+	
+@BF26
+Scenario: [Beauty_Concealer_26] To verify user is able to click explore button of BLURRING CONCEALER on concealer 
+page and verify the page[pending]
+	When Clicking on "Concealer"
+	When Scrolling to ENHANCE AND EMPOWER heading and click on EXPLORE
+	And Observe the page open for the clicked product
+	
+@BF28
+Scenario: [Beauty_FacePalette_28] To verify user is able to open the header video on Face-palette page
+	When Clicking on "Face Palette"
+	When Scrolling down and play the header video
+	And Observe the open content of video
+	
+@BF29
+Scenario: [Beauty_FacePalette_29] To verify user is able to click on the dropdown icon below "buy" button on 
+the face-palette page
+	When Clicking on "Face Palette"
+	When Scrolling and Clicking on dropdown below buy button
+	#Then Observe the dropdown list
+	
+@BF31
+Scenario: [Beauty_FacePalette_31] To verify the products in the background gets highlighted according to the 
+selected color from the drop down options on the face-palette page.
+	When Clicking on "Face Palette"
+	Then Verifying the products gets highlighted according to selected color
+	
+@BF33
+Scenario: [Beauty_FacePalette_33] To verify user is able to click on the close(x) Icon of header video on Face-palette 
+page
+	When Clicking on "Face Palette"
+	When Scrolling down and play the header video
+	And Click on "X" button on the top of the page and Observe
 
+@BF34
+Scenario: [Beauty_FacePalette_34] To verify user is able to open the video of tutorial on Face-palette page and verify
+ the page
+ 	When Clicking on "Face Palette"
+ 	When Scrolling down and clicking on tutorial video
+	And Observe the open content of video
+	
+@BF35
+Scenario: [Beauty_FacePalette_35] To verify user is able to click on the close(x) Icon of tutorial video on Face-palette 
+page
+	When Clicking on "Face Palette"
+ 	When Scrolling down and clicking on tutorial video
+ 	And Click on "X" button on the top of the page and Observe
 

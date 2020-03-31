@@ -69,7 +69,7 @@ public class BeautyStepDefinition extends StepDefinitionInit{
 	
 	@And("^Observe the page open for the clicked product$")
     public void observeThePageOpenForTheClickedProduct() throws Throwable {
-		Assert.assertTrue(beautyPO.checkForURL("http://vo.max.com/products/beauty/eye-palette/"));
+		Assert.assertTrue(beautyPO.checkForURL("http://vo.max.com/products/beauty/concealer/"));
 	}
 	
 	@When("^Scrolling to MaxBeauty and click$")
@@ -126,5 +126,16 @@ public class BeautyStepDefinition extends StepDefinitionInit{
 	 @And("^Check for the slick arrow$")
 	    public void checkForTheSlickArrow() throws Throwable {
 		 
+	 }
+	 
+	 @When("^Scrolling and Clicking on dropdown below buy button$")
+	    public void scrollingAndClickingOnDropdownBelowBuyButton() throws Throwable {
+		 beautyPO.clickOnDropDown();
+		 
+	 }
+	 
+	 @Then("^Verifying the products gets highlighted according to selected color$")
+	    public void verifyingTheProductsGetsHighlightedAccordingToSelectedColor() throws Throwable {
+		 beautyPO.verifyOptionForSelectedDropDownOption();
 	 }
 }

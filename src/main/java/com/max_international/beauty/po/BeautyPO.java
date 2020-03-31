@@ -1,5 +1,6 @@
 package com.max_international.beauty.po;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
@@ -8,6 +9,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.max_international.Helper.Helper;
@@ -52,16 +54,11 @@ public class BeautyPO extends MobileWebViewPage  {
 		
 	}
 	public boolean checkforVideoStatus(String statusOfVideo){
-		//WebDriverWait wait = new WebDriverWait(session.driver, 20);
-		//wait.until(ExpectedConditions.visibilityOf(element("youtubePlayButton")));
-		//Thread.sleep(2000);
-		final String attribute = "return arguments[0].getAttribute('checked')";
-		JavascriptExecutor js = (JavascriptExecutor) session.driver;  
 		
-		String tt =(String) js.executeScript(attribute, element("youtubePlayButton"));
+		String tt = element("youtubePlayButton").getAttribute("aria-label");
 		System.out.println("In status");
 		System.out.println(tt);
-		return tt.contains(statusOfVideo)?true:false;
+		return tt.contains("Play (k)")?true:false;
 	}
 	
 	public void pauseTheVideo(){
@@ -215,5 +212,29 @@ public class BeautyPO extends MobileWebViewPage  {
 		session.driver.switchTo().frame(0);
 		System.out.println(element("youtubePlayButton").getAttribute("aria-label"));
 		element("youtubePlayButton").click();
+	}
+	
+	public void clickOnDropDown(){
+		Select drpShade = new Select(element("dropDownFacePalette"));
+		helper.scrollForElementNClick(element("dropDownFacePalette"));
+		drpShade.selectByIndex(2);
+		drpShade.getOptions();
+	}
+	
+	public void verifyOptionForSelectedDropDownOption(){
+		helper.scrollForElementNClick(element("dropDownFacePalette"));
+		Select drpShade = new Select(element("dropDownFacePalette"));
+		HashMap<Integer, String> table = new HashMap<>();
+		int i = 0;
+		
+		for(WebElement shade:drpShade.getOptions()){
+			
+			table.put(i, session.driver.findElement(By.xpath("//*[@class='palette-options']")).getAttribute("src"));
+			i++;
+			
+			
+		}
+		System.out.println(table.keySet());
+		System.out.println(table.values());
 	}
 }

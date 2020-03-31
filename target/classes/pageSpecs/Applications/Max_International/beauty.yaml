@@ -30,10 +30,10 @@ elements:
             locator: //*[@class="slider-arrow slider-next fa fa-angle-right slick-arrow"]
          clickExplore:
             findBy: xpath
-            locator: (//a[@href="/products/beauty/perfect-pout/" and text() = "EXPLORE"])[2]
+            locator: (//*[@href="/products/beauty/concealer/"])[3]
          productInScroll:
             findBy: xpath
-            locator: //*[@href="/products/beauty/eye-palette" and text() = "DEFINE.EXPRESS.REMIX"]
+            locator: (//*[@class="product-slider-subtitle" and text()="BLURRING CONCEALER"])[2]
          maxBeautyLinkForInsta:
             findBy: xpath
             locator: //*[@href="https://www.instagram.com/maxintlbeauty/"]
@@ -76,4 +76,7 @@ elements:
          tutorialBox:
             findBy: xpath
             locator: (//*[@class="box-content"])[1]
+         dropDownFacePalette:
+            findBy: id
+            locator: picDD
          
