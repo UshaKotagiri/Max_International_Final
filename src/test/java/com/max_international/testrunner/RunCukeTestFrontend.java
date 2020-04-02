@@ -14,10 +14,10 @@ import cucumber.api.junit.Cucumber;
 							  "json:target/cucumber-report.json",
 					 		  "html:target/cucumber-report.html" }, 
 				
-				features = "src/test/resources/features/frontend/",
+				features = "src/test/resources/features/frontend/Beauty.feature",
 
-				 glue = {"com.max_international.stepdefs"},
-				 tags={"@BF15,@BF20,@BF23,@BF26,@BF28,@BF33,@BF34,@BF35"}
+				 glue = {"com.max_international.stepdefs"}
+				 
 )  
 				
 public class RunCukeTestFrontend {

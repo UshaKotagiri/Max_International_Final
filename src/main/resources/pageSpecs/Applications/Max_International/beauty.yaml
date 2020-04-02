@@ -79,4 +79,12 @@ elements:
          dropDownFacePalette:
             findBy: id
             locator: picDD
-         
+         highlitedOptionsForDropDown:
+            findBy: xpath
+            locator: //*[@class="palette-options"]   
+         scrollOption:
+            findBy: xpath
+            locator: //*[@class="product-slider-subtitle"]     
+         exploreButton:
+            findBy: xpath
+            locator: (//*[text()="EXPLORE"]) 

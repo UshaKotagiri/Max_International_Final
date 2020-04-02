@@ -11,7 +11,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.max_international.Helper.Helper;
 import com.max_international.automation.framework.TestSession;
 import com.max_international.framework.pagefactory.MobileWebViewPage;
@@ -214,27 +213,64 @@ public class BeautyPO extends MobileWebViewPage  {
 		element("youtubePlayButton").click();
 	}
 	
-	public void clickOnDropDown(){
+	public boolean clickOnDropDown(){
 		Select drpShade = new Select(element("dropDownFacePalette"));
 		helper.scrollForElementNClick(element("dropDownFacePalette"));
 		drpShade.selectByIndex(2);
+		String[] options = {"GLOW GETTER.DEEP DARK","GLOW GETTER.MEDIUM DARK","GLOW GETTER.LIGHT MEDIUM"};
+		
 		drpShade.getOptions();
+		int i = 0;
+		for(WebElement shade:drpShade.getOptions()){
+			
+			if(!shade.getText().contains(options[i])){
+				return false;
+			}
+			i++;
+		}
+		return true;
+		
+		
 	}
 	
-	public void verifyOptionForSelectedDropDownOption(){
+	public boolean verifyOptionForSelectedDropDownOption(){
 		helper.scrollForElementNClick(element("dropDownFacePalette"));
 		Select drpShade = new Select(element("dropDownFacePalette"));
+		String[] options = {"https://maxintlmarketing.s3-us-west-2.amazonaws.com/images/beauty/product-pages/glow-getter/deep-dark.png",
+				"https://maxintlmarketing.s3-us-west-2.amazonaws.com/images/beauty/product-pages/glow-getter/medium-dark.png",	
+				"https://maxintlmarketing.s3-us-west-2.amazonaws.com/images/beauty/product-pages/glow-getter/light-medium.png"
+			};
 		HashMap<Integer, String> table = new HashMap<>();
 		int i = 0;
 		
 		for(WebElement shade:drpShade.getOptions()){
+			shade.click();
+			table.put(i, element("highlitedOptionsForDropDown").getAttribute("src"));
 			
-			table.put(i, session.driver.findElement(By.xpath("//*[@class='palette-options']")).getAttribute("src"));
-			i++;
+			if(!table.get(i).contains(options[i])){
+				return false;
+			}
 			
-			
+			++i;
 		}
-		System.out.println(table.keySet());
-		System.out.println(table.values());
+		
+		return true;
+	}
+	
+	public void selectOptionNClickExplore(String option){
+		int i =1;
+		Actions actions = new Actions(session.driver);
+		actions.moveToElement(element("textHeading")).perform();
+		List<WebElement> allOptions = elements("scrollOption");
+		for(WebElement opt:allOptions){
+			if(opt.getText().contains(option)){
+				WebDriverWait wait = new WebDriverWait(session.driver, 30);
+				wait.until(ExpectedConditions.visibilityOf(opt));
+				helper.hooverToMainNSubNClick(element("textHeading"), session.driver.findElement(By.xpath("(//*[text()='EXPLORE'])"+"["+i+"]")));
+				break;
+			}
+			i++;
+		}
+		
 	}
 }

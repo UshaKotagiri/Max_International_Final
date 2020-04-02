@@ -128,14 +128,24 @@ public class BeautyStepDefinition extends StepDefinitionInit{
 		 
 	 }
 	 
-	 @When("^Scrolling and Clicking on dropdown below buy button$")
-	    public void scrollingAndClickingOnDropdownBelowBuyButton() throws Throwable {
-		 beautyPO.clickOnDropDown();
+	 @Then("^Scrolling and Clicking on dropdown below buy button and verifying for all options$")
+	    public void scrollingAndClickingOnDropdownBelowBuyButtonAndVerifyingForAllOptions() throws Throwable {
+		 Assert.assertTrue(beautyPO.clickOnDropDown());
 		 
 	 }
 	 
-	 @Then("^Verifying the products gets highlighted according to selected color$")
-	    public void verifyingTheProductsGetsHighlightedAccordingToSelectedColor() throws Throwable {
-		 beautyPO.verifyOptionForSelectedDropDownOption();
+	 @Then("^Scrolling and Clicking on dropdown below buy button and verifying for the respective highlighted image$")
+	    public void scrollingAndClickingOnDropdownBelowBuyButtonAndVerifyingForTheRespectiveHighlightedImage() throws Throwable {
+		 Assert.assertTrue(beautyPO.verifyOptionForSelectedDropDownOption());
+	 }
+	 
+	 @When("^Selecting the \"([^\"]*)\" and click on explore button$")
+	    public void selectingTheSomethingAndClickOnExploreButton(String strArg1) throws Throwable {
+		 beautyPO.selectOptionNClickExplore(strArg1);
+	 }
+	 
+	 @Then("^Check whether it navigates to the same url$")
+	    public void checkWhetherItNavigatesToTheSameUrl() throws Throwable {
+		 Assert.assertTrue(session.driver.getCurrentUrl().contains("http://vo.max.com/products/beauty/face-palette/"));
 	 }
 }

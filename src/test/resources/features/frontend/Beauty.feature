@@ -239,14 +239,14 @@ Scenario: [Beauty_FacePalette_28] To verify user is able to open the header vide
 Scenario: [Beauty_FacePalette_29] To verify user is able to click on the dropdown icon below "buy" button on 
 the face-palette page
 	When Clicking on "Face Palette"
-	When Scrolling and Clicking on dropdown below buy button
-	#Then Observe the dropdown list
+	Then Scrolling and Clicking on dropdown below buy button and verifying for all options
+	
 	
 @BF31
 Scenario: [Beauty_FacePalette_31] To verify the products in the background gets highlighted according to the 
 selected color from the drop down options on the face-palette page.
 	When Clicking on "Face Palette"
-	Then Verifying the products gets highlighted according to selected color
+	Then Scrolling and Clicking on dropdown below buy button and verifying for the respective highlighted image
 	
 @BF33
 Scenario: [Beauty_FacePalette_33] To verify user is able to click on the close(x) Icon of header video on Face-palette 
@@ -268,4 +268,39 @@ page
 	When Clicking on "Face Palette"
  	When Scrolling down and clicking on tutorial video
  	And Click on "X" button on the top of the page and Observe
+ 	
+#@BF36
+#Scenario: [Beauty_FacePalette_36] To verify user is able to click forward/backword slick arrow on Face-palette page 
+#and verify the next page
+	
 
+@BF37
+Scenario: [Beauty_FacePalette_37] To verify user is able to click explore button of CONTOUR|BLUSH|HIGHLIGHT 
+on Face-palette page and verify the page[pending]
+	When Clicking on "Face Palette"
+	When Selecting the "CONTOUR | BLUSH | HIGHLIGHT" and click on explore button
+	Then Check whether it navigates to the same url
+	
+@BE35
+Scenario: [Beauty_EyePalette_35] To verify user is able to open the header video on Eye-palette page
+	When Clicking on "Eye Palette"
+	When Scrolling down and play the header video
+	And Observe the open content of video
+	
+@BE36
+Scenario: [Beauty_EyePalette_36] To verify user is able to click on the close(x) Icon of header video on Eye-palette page
+	When Clicking on "Eye Palette"
+	When Scrolling down and play the header video
+	And Click on "X" button on the top of the page and Observe
+
+@BE37
+Scenario: [Beauty_EyePalette_37] To verify user is able to open the video of tutorial on Eye-palette page and verify the page
+	When Clicking on "Eye Palette"
+	When Scrolling down and clicking on tutorial video
+ 	And Observe the open content of video
+ 	
+@BE38
+Scenario: [Beauty_EyePalette_38] To verify user is able to click on the close(x) Icon of tutorial video on Eye-palette page
+	When Clicking on "Eye Palette"
+	When Scrolling down and clicking on tutorial video
+	And Click on "X" button on the top of the page and Observe
