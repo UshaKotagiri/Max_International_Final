@@ -148,4 +148,23 @@ public class BeautyStepDefinition extends StepDefinitionInit{
 	    public void checkWhetherItNavigatesToTheSameUrl() throws Throwable {
 		 Assert.assertTrue(session.driver.getCurrentUrl().contains("http://vo.max.com/products/beauty/face-palette/"));
 	 }
+	 
+	 @When("^Clicking on Shop$")
+	    public void clickingOnShop() throws Throwable {
+		 beautyPO.clickForShop();
+	 }
+	 
+	 @When("^Clicking on \"([^\"]*)\" product's Add to Order$")
+	    public void clickingOnSomethingProductsAddToOrder(String strArg1) throws Throwable {
+		 
+		 beautyPO.clickOnAddTOOrderNCheckout(strArg1);
+	 }
+	 @When("^Scrolling for I don't have my sponsor's username$")
+	    public void scrollingForIDontHaveMySponsorsUsername() throws Throwable {
+		 beautyPO.clickForIdontHaveSponsor();
+	 }
+	 @Then("^Scroll for \"([^\"]*)\" and check for pdf$")
+	    public void scrollForSomethingAndCheckForPdf(String strArg1) throws Throwable {
+		 Assert.assertTrue(beautyPO.clickONTermsORPrivacy(strArg1));
+		 }
 }

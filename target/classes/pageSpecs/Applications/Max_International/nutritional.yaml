@@ -1,0 +1,17 @@
+timeout: 20
+
+expectedTitle: Max_Iterational Product
+
+elements:
+      nutritionalHoovertListOnTopOfThePage:
+            findBy: xpath
+            locator: (//*[@class="col-sm-6"])[6]//li//a
+      productButton: 
+            findBy: xpath
+            locator: //*[@class="nav-link dropdown-toggle"][@href="/products/"]
+      nutritionalListOnBanner:
+            findBy: xpath
+            locator: //*[@class="product-card aos-init aos-animate"]
+      listOfProductsInNutritionalPage:
+            findBy: xpath
+            locator: //*[@class="simple-card h-100"]

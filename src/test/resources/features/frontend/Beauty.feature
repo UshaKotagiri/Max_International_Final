@@ -51,6 +51,7 @@ Scenario: [Beauty_100] To verify that user can see all other Products on Beauty 
 @B11
 Scenario: [Beauty_101] To verify that user is able to click on "Explore" of the products on Beauty page
    When Scrolling to ENHANCE AND EMPOWER heading and click on EXPLORE 
+   And Observe the page open for the clicked product
 
 @B12
 Scenario: [Beauty_102] To verify that user is able to click on product link of the products on Beauty page
@@ -111,21 +112,21 @@ Scenario: [Beauty_Mascara_06] To verify that "Buy Now" link leads to the correct
 	When Scrolling and Clicking on Buy Now
 	And Observe the incorrect page for Buy now
 	
-@BF7 @BuyNow
-Scenario: [Beauty_Lip Treatment_07] To verify that "Buy Now" link leads to the correct page when user clicks on Lip Treatment
-	When Clicking on "Lip Treatment"
-	When Scrolling and Clicking on Buy Now
-	And Observe the incorrect page for Buy now
+#@BF7 @BuyNow
+#Scenario: [Beauty_Lip Treatment_07] To verify that "Buy Now" link leads to the correct page when user clicks on Lip Treatment
+#	When Clicking on "Lip Treatment"
+#	When Scrolling and Clicking on Buy Now
+#	And Observe the incorrect page for Buy now
 	
-@BF8 @BuyNow
-Scenario: [Beauty_Lip Color_08] To verify that "Buy Now" link leads to the correct page when user clicks on Lip color
-	When Clicking on "Lip Color"
-	When Scrolling and Clicking on Buy Now
-	And Observe the incorrect page for Buy now
+#@BF8 @BuyNow
+#Scenario: [Beauty_Lip Color_08] To verify that "Buy Now" link leads to the correct page when user clicks on Lip color
+#	When Clicking on "Lip Color"
+#	When Scrolling and Clicking on Buy Now
+#	And Observe the incorrect page for Buy now
 
 @BF9 @BuyNow
 Scenario: [Beauty_Primer+Setting Spray_09] To verify that "Buy Now" link leads to the correct page when user clicks on Primer
-	When Clicking on "Primer+Setting Spray"
+	When Clicking on "Primer + Setting Spray"
 	When Scrolling and Clicking on Buy Now
 	And Observe the incorrect page for Buy now
 	
@@ -184,6 +185,7 @@ Scenario: [Beauty_Foundation_18] To verify user is able to click explore button 
 foundation page and observe the page[pending]
 	When Clicking on "Foundation"
 	When Scrolling to ENHANCE AND EMPOWER heading and click on EXPLORE
+	And Observe the page open for the clicked product
 
 @BF20
 Scenario: [Beauty_Concealer_20] To verify user is able to open the header video on concealer page
@@ -304,3 +306,16 @@ Scenario: [Beauty_EyePalette_38] To verify user is able to click on the close(x)
 	When Clicking on "Eye Palette"
 	When Scrolling down and clicking on tutorial video
 	And Click on "X" button on the top of the page and Observe
+	
+@SH30
+Scenario: [Shop_30] To verify that user is able to click on the 'terms of use' and 'privacy policy' links from
+ "Contact Request" page
+ 	When Clicking on Shop
+ 	And Observe the page open for "Max International - Shop for Products"
+ 	When Clicking on "Max N-Fuze™ 1 Mo (30Pk)" product's Add to Order
+ 	When Scrolling for I don't have my sponsor's username
+ 	Then Scroll for "Terms of Use" and check for pdf 
+ 	When Clicking on the back button of browser
+ 	Then Scroll for "Privacy Policy" and check for pdf 
+ 	
+ 	

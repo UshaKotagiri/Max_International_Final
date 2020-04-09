@@ -1,0 +1,50 @@
+timeout: 20
+
+expectedTitle: Max International Login
+
+elements:
+
+     
+   
+    userName: 
+        findBy: css
+        locator: input[placeholder="Email"]
+    password: 
+        findBy: css
+        locator: input[placeholder="Password"]
+    siginButton: 
+        findBy: css
+        locator: [type="submit"]
+    homePage: 
+        findBy: css
+        locator: li[class="isoUserEmail"]  
+    english:
+        findBy: xpath
+        locator: //button[@id="en"]
+    countryList:
+         findBy: xpath
+         locator: //*[@class="center-it-y"]
+    memberLogin:
+          findBy: xpath
+          locator: //*[@class="fa fa-user"]
+    userNameTab:
+          findBy: id
+          locator: username
+    passwordTab:
+          findBy: xpath
+          locator: //*[@id="password"]
+    maxInternationalLogo:
+          findBy: xpath
+          locator: //*[@class="header--logo"]
+    australiaLink:
+          findBy: xpath
+          locator: //*[text()="Australia"]
+
+    languageSelect:
+           findBy: xpath
+           locator: //*[@class="col-12 border-bottom language-btn-centering py-3 mb-5"]//button
+    listOfCountries:
+           findBy: xpath
+           locator: //h3
+   
+        

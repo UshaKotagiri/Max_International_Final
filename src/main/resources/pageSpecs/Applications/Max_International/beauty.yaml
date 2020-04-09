@@ -34,6 +34,9 @@ elements:
          productInScroll:
             findBy: xpath
             locator: (//*[@class="product-slider-subtitle" and text()="BLURRING CONCEALER"])[2]
+         clickingProductLink:
+            findBy: xpath
+            locator: (//*[@href="/products/beauty/concealer"])[2]
          maxBeautyLinkForInsta:
             findBy: xpath
             locator: //*[@href="https://www.instagram.com/maxintlbeauty/"]
@@ -58,9 +61,12 @@ elements:
          listOfBeautyOptions:
             findBy: xpath
             locator: (//ul[@class="mb-3"])[5]//li//a
+         scrollNearBuyNow:
+            findBy: xpath
+            locator: //*[@class="col-12 prod-ingredient-rght"]
          buttonForBuyNow:
             findBy: xpath
-            locator: //*[@id="for_sponsor_button"]
+            locator: //*[@id = "for_sponsor_button"]
          popedWindowForBuyNow:
             findBy: xpath
             locator: //*[text()=" How did you hear about us? "]
@@ -88,3 +94,21 @@ elements:
          exploreButton:
             findBy: xpath
             locator: (//*[text()="EXPLORE"]) 
+         shopbutton:
+            findBy: xpath
+            locator: (//a[@href="/shop/shop-product"])[1]
+         shopProductsList:
+            findBy: xpath
+            locator: //*[@class="item product"]//h3
+         addToOrderClick:
+            findBy: xpath
+            locator: (//*[@class="item product"]//div//a)
+         notNowButton:
+            findBy: id
+            locator: btn-autoship-disagree
+         noSponsor:
+            findBy: xpath
+            locator: //*[@href="http://vo.max.com/shop/request-contact/"]
+         termsNPrivacy:
+            findBy: xpath
+            locator: //*[@id="prospect_contact_form"]//a

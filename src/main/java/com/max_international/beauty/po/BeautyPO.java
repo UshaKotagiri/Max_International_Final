@@ -39,7 +39,7 @@ public class BeautyPO extends MobileWebViewPage  {
 		session.driver.navigate().back();
 	}
 	
-	public void clickForVideo() {
+	public void clickForVideo(){
 		helper.scrollForElementNClick(element("playVideoButtonBeauty"));
 		session.driver.switchTo().frame(0);
 		//element("youtubePlayButton").click();
@@ -53,7 +53,6 @@ public class BeautyPO extends MobileWebViewPage  {
 		
 	}
 	public boolean checkforVideoStatus(String statusOfVideo){
-		
 		String tt = element("youtubePlayButton").getAttribute("aria-label");
 		System.out.println("In status");
 		System.out.println(tt);
@@ -66,7 +65,7 @@ public class BeautyPO extends MobileWebViewPage  {
 		js .executeScript("session.driver.getElementById('player_uid_20373699_1').pause()");
 		//helper.scrollForElementNClick(element("youtubePlayButton"));
 	}
-	public String clickForXButton(){
+	public String clickForXButton() {
 		session.driver.switchTo().defaultContent();
 		helper.scrollForElementNClick(element("XButtonVideo"));
 		return session.driver.getWindowHandle();
@@ -86,15 +85,8 @@ public class BeautyPO extends MobileWebViewPage  {
 	
 	public void clickForProduct(){
 	
-		JavascriptExecutor js = (JavascriptExecutor) session.driver;  
+		helper.hooverToMainNSubNClick(element("textHeading"), element("clickingProductLink"));
 
-		js.executeScript("arguments[0];", element("textHeading"));
-		WebDriverWait wait = new WebDriverWait(session.driver, 30);
-		wait.until(ExpectedConditions.visibilityOf(element("productInScroll")));
-		
-		helper.scrollForElementNClick(element("productInScroll"));
-
-		System.out.println("Check for window handle:");
 
 	}
 	
@@ -172,7 +164,7 @@ public class BeautyPO extends MobileWebViewPage  {
 	
 	public void clickForBuyNow(){
 		helper.scrollForElementNClick(element("buttonForBuyNow"));
-	}
+		}
 	
 	public boolean buyNowIncorrectWindow(){
 		return element("popedWindowForBuyNow").isDisplayed()?true:false;
@@ -272,5 +264,54 @@ public class BeautyPO extends MobileWebViewPage  {
 			i++;
 		}
 		
+	}
+	
+	public void clickForShop(){
+		element("shopbutton").click();
+	}
+	
+	public void clickOnAddTOOrderNCheckout(String product){
+		Actions actions = new Actions(session.driver);
+		//actions.moveToElement(element("shopProductsList")).perform();
+		int i = 0;
+		List<WebElement> allOptions = elements("shopProductsList");
+		for(WebElement opt:allOptions){
+			System.out.println(opt.getText());
+			i=i+1;
+			if(opt.getText().contains(product)){
+				System.out.println(i);
+				actions.moveToElement(opt).perform();
+				actions.moveToElement(session.driver.findElement(By.xpath("(//*[@class='item product']//div//a)"+"["+i+"]"))).click().perform();
+				
+				actions.moveToElement(session.driver.findElement(By.xpath("(//*[@class='item product']//div//a)"+"["+i+"]"))).click().perform();
+				
+				JavascriptExecutor js = (JavascriptExecutor) session.driver;  
+
+				js.executeScript("arguments[0].click();", element("notNowButton"));
+				//element("notNowButton").click();
+		break;
+			}
+		}
+	}
+	
+	public void clickForIdontHaveSponsor(){
+		helper.scrollForElementNClick(element("noSponsor"));
+	}
+	
+	public boolean clickONTermsORPrivacy(String opted){
+		Actions actions = new Actions(session.driver);
+		actions.moveToElement(element("termsNPrivacy")).perform();
+		List<WebElement> options = elements("termsNPrivacy");
+		for(WebElement opt : options){
+			System.out.println(opt.getText());
+			if(opt.getText().contains(opted)){
+				session.driver.navigate().to(opt.getAttribute("href"));
+				
+				String u = session.driver.getCurrentUrl();
+				return u.contains("https://maxintlmarketing.s3-us-west-2.amazonaws.com/pdf/terms-of-use_en.pdf")?true:(u.contains("https://maxintlmarketing.s3-us-west-2.amazonaws.com/pdf/privacy-policy_en.pdf")?true:false);
+	
+			}
+		}
+		return false;
 	}
 }

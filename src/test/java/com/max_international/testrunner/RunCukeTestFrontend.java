@@ -17,6 +17,8 @@ import cucumber.api.junit.Cucumber;
 				features = "src/test/resources/features/frontend/Beauty.feature",
 
 				 glue = {"com.max_international.stepdefs"}
+				
+			
 				 
 )  
 				

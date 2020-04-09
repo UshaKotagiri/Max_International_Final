@@ -1,0 +1,114 @@
+timeout: 20
+
+expectedTitle: Max_Iterational Beauty
+
+elements:
+
+         productButton: 
+            findBy: xpath
+            locator: //*[@class="nav-link dropdown-toggle"][@href="/products/"]
+         beautyOnTopHoover:
+            findBy: xpath
+            locator: //*[@href="/products/beauty" and text() = "Beauty"]   
+         playVideoButtonBeauty:
+            findBy: xpath
+            locator: //img[@src="https://maxintlmarketing.s3-us-west-2.amazonaws.com/images/beauty/icons/black-play-button.png"]
+         youtubePlayButton:
+            findBy: xpath
+            locator: //button[@class="ytp-play-button ytp-button"]
+         XButtonVideo:
+            findBy: xpath
+            locator: //*[@class="lity-close"]
+         learnMoreBeauty:
+            findBy: xpath
+            locator: //*[@href="/products/beauty/why-max" and text() = "Learn More"]
+         textHeading:
+            findBy: xpath
+            locator: //*[text()="ENHANCE AND EMPOWER"]
+         rightArrow:
+            findBy: xpath
+            locator: //*[@class="slider-arrow slider-next fa fa-angle-right slick-arrow"]
+         clickExplore:
+            findBy: xpath
+            locator: (//*[@href="/products/beauty/concealer/"])[3]
+         productInScroll:
+            findBy: xpath
+            locator: (//*[@class="product-slider-subtitle" and text()="BLURRING CONCEALER"])[2]
+         clickingProductLink:
+            findBy: xpath
+            locator: (//*[@href="/products/beauty/concealer"])[2]
+         maxBeautyLinkForInsta:
+            findBy: xpath
+            locator: //*[@href="https://www.instagram.com/maxintlbeauty/"]
+         listOfPhotosOfInsta:
+            findBy: xpath
+            locator: (//div[@class="crt-grid-carousel-slider crt-animate-transform"])[1]
+         rightArrowForInstaPhotos:
+            findBy: xpath
+            locator: //*[@id="curator-feed-default-layout"]//button[2]
+         headingRAVESnREVIEWS:
+            findBy: xpath
+            locator: //h1[text()="RAVES AND REVIEWS"]
+         photoInTheListOfInsta:
+            findBy: xpath
+            locator: //span[@class="crt-play"]
+         buttonForWhyMax:
+            findBy: xpath
+            locator: //a[@href="/company/why-max/max-difference/"]
+         buttonForBlog:
+            findBy: xpath
+            locator: //a[@href="http://blog.max.com/" and text() ="Blog"]
+         listOfBeautyOptions:
+            findBy: xpath
+            locator: (//ul[@class="mb-3"])[5]//li//a
+         scrollNearBuyNow:
+            findBy: xpath
+            locator: //*[@class="col-12 prod-ingredient-rght"]
+         buttonForBuyNow:
+            findBy: xpath
+            locator: //*[@id = "for_sponsor_button"]
+         popedWindowForBuyNow:
+            findBy: xpath
+            locator: //*[text()=" How did you hear about us? "]
+         listOfShades:
+            findBy: xpath
+            locator: //*[@class="shade-slctncol-main active"]
+         dispalyOfShadeSelected:
+            findBy: xpath
+            locator: //*[@class="prod-ingredient-title"]
+         tutorialPlayButton:
+            findBy: xpath
+            locator: //*[@class="asceudos-big" and text() ="Play"]
+         tutorialBox:
+            findBy: xpath
+            locator: (//*[@class="box-content"])[1]
+         dropDownFacePalette:
+            findBy: id
+            locator: picDD
+         highlitedOptionsForDropDown:
+            findBy: xpath
+            locator: //*[@class="palette-options"]   
+         scrollOption:
+            findBy: xpath
+            locator: //*[@class="product-slider-subtitle"]     
+         exploreButton:
+            findBy: xpath
+            locator: (//*[text()="EXPLORE"]) 
+         shopbutton:
+            findBy: xpath
+            locator: (//a[@href="/shop/shop-product"])[1]
+         shopProductsList:
+            findBy: xpath
+            locator: //*[@class="item product"]//h3
+         addToOrderClick:
+            findBy: xpath
+            locator: (//*[@class="item product"]//div//a)
+         notNowButton:
+            findBy: id
+            locator: btn-autoship-disagree
+         noSponsor:
+            findBy: xpath
+            locator: //*[@href="http://vo.max.com/shop/request-contact/"]
+         termsNPrivacy:
+            findBy: xpath
+            locator: //*[@id="prospect_contact_form"]//a
